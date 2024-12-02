@@ -1,0 +1,38 @@
+\begin{problem}{4}
+    Write the function
+
+    $$f(z) = z + \frac{1}{z}$$
+
+    in the form $f(z) = u(r,\theta) + iv(r,\theta)$
+\end{problem}
+
+
+En la forma polar $z = re^{i\theta}$. Remplazando esto en $f(z)$
+
+\begin{gather*}
+    f(z) = re^{i\theta} + \frac{1}{re^{i\theta}}\\
+    f(z) = re^{i\theta} + \frac{1}{r}e^{-i\theta}
+\end{gather*}
+
+Escribiendo los exponenciales en términos de funciones periódicas 
+
+\begin{gather*}
+    f(z) = r(\cos\theta + i\sin\theta) + \frac{1}{r}(\cos\theta - i\sin\theta)
+\end{gather*}
+
+Usando propiedad distributiva de la multiplicación 
+
+\begin{gather*}
+    f(z) = r\cos\theta + ir\sin\theta + \frac{1}{r}\cos\theta - i\frac{1}{r}\sin\theta
+\end{gather*}
+
+Finalmente agrupando los valores rales e imaginarios
+
+\begin{mdframed}
+    \vspace{-0.25cm}
+    \begin{gather}
+        f(z) = \left(r + \frac{1}{r}\right)\cos\theta + i\left(r   - \frac{1}{r}\right)\sin\theta
+    \end{gather}
+    \vspace{-0.3cm}
+\end{mdframed}
+

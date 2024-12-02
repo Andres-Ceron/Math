@@ -1,0 +1,52 @@
+\begin{problem}{8}
+    Prove Taylor’s theorem for the case $z_0 = 0$ (See Sec. 63, Churchill,
+    Complex variables and applications, 9th ed.).
+\end{problem}
+
+Partiendo de la formula de integración de Cauchy
+
+\begin{gather}
+    f(z_0) = \frac{1}{2\pi i}\int_c \frac{f(z)dz}{z-z_0}
+\end{gather}
+
+Suponemos una circunferencia orientada positivamente $C_0$ con radio $|z| = r_0$, donde $r < r_0 < R$. Ahora, definimos $f$ como una función que es analítica dentro de la circunferencia $C_0$, de tal forma que se puede expresar la integración de Cauchy 
+
+\begin{gather*}
+    f(z) = \frac{1}{2\pi i}\int_c \frac{f(s)ds}{s-z} = \frac{1}{2\pi i}\int_c \frac{f(s)ds}{s}\frac{1}{1-(z/s)} 
+\end{gather*}
+Se puede expresar entonces el último termino como una suma más su resto, es decir,
+
+\begin{gather*}
+    \frac{1}{1-(z/s)} = \sum_{N-1}^{n = 0}\left(\frac{z}{s}\right)^n + \frac{(z/s)^N}{1-(z/s)} = \sum_{N-1}^{n = 0}\frac{z^n}{s^n} + \frac{z^N}{(1-(z/s))s^{N}}\\
+    \frac{1}{s-z} = \frac{1}{s}\left(\sum_{N-1}^{n = 0}\frac{z^n}{s^n} + \frac{(z/s)^N}{1-(z/s)}\right) = \sum_{N-1}^{n = 0}\frac{z^n}{s^{n+1}} + \frac{z^N}{(s-z)s^N}
+\end{gather*}
+Remplazando en la integral 
+
+\begin{gather}
+    \label{eq:Ts1}f(z) = \frac{1}{2\pi i} \sum_{N-1}^{n = 0} \int_c\frac{f(s)ds}{s^{n+1}}z^n + \frac{z^N}{2\pi i}\int_c \frac{f(s)ds}{(s-z)s^N}
+\end{gather}
+Recordando la extensión de la integración de Cauchy
+
+\begin{gather*}
+    \frac{n!}{2\pi i}\int_{C} \frac{f(s)ds}{(s-z)^{n+1}} = f^{(n)}(z)
+\end{gather*}
+Esta expresión se tiene la misma forma que la primera integral de la ecuación (\ref*{eq:Ts1}), para el valor de $z=0$. Tomando el primer término y remplazando
+
+\begin{gather*}
+    \frac{1}{2\pi i} \sum_{N-1}^{n = 0} \int_c\frac{f(s)ds}{s^{n+1}}z^n = \sum_{N-1}^{n = 0} \frac{f^{(n)}(0)}{n!} z^n
+\end{gather*}
+Remplazando en (\ref*{eq:Ts1})
+
+\begin{gather*}
+    f(z) = \sum_{N-1}^{n = 0} \frac{f^{(n)}(0)}{n!} z^n+ \frac{z^N}{2\pi i}\int_c \frac{f(s)ds}{(s-z)s^N}
+\end{gather*}
+
+Ahora en el limite en que $N \rightarrow \infty$, entonces el segundo termino tiende a cero, esto es debido a que la suma sobre $z^n$ es estable y su resto tiene a cero en el infinito. 
+
+\begin{mdframed}
+    \vspace{-0.5cm}
+    \begin{gather}
+        f(z) = \sum_{N-1}^{n = 0} \frac{f^{(n)}(0)}{n!} z^n
+    \end{gather}
+\end{mdframed}
+

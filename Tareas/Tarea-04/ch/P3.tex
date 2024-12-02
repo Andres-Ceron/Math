@@ -1,0 +1,39 @@
+\begin{problem}{3}
+    Use the identity $\sinh(z + \pi i) = - sinh z$, and the fact that $\sinh z$ is periodic with period $2\pi i$ to find the Taylor series for sinh $z$ about the point $z_0 = \pi i$.
+\end{problem}
+
+Previamente se demostró la serie de Maclaurin para $\sin(z)$ y esta dada por.
+
+\begin{gather*}
+    \sin(z) = \sumserie \frac{(-1)^n z^{2n+1}}{(2n+1)!}
+\end{gather*}
+Aprovechando la relación con la función hiperbólica, $\sinh(z) = -\sin(iz)$ se obtiene
+
+\begin{gather*}
+    \sinh(z)= -i\sin(iz) = -i\sumserie \frac{(-1)^n (iz)^{2n+1}}{(2n+1)!} =  -i\sumserie \frac{iz^{2n+1}}{(2n+1)!}\\
+    \sinh(z)=  \sumserie \frac{z^{2n+1}}{(2n+1)!}
+\end{gather*}
+Ahora, usando la identidad $\sinh(z + \pi i) = -\sinh z$
+
+\begin{gather*}
+    \sinh(z + \pi i) = -  \sumserie \frac{z^{2n+1}}{(2n+1)!}
+\end{gather*}
+Debido a que esta función es periódica cada $2\pi i$ entonces 
+
+\begin{gather}
+    \sinh(z + \pi i - 2\pi i) = \sinh(z - \pi i) = -\sinh(z)
+\end{gather}
+Realizando la sustitución $u = z- \pi i$ entonces 
+
+\begin{gather*}
+    \sinh(z) = -\sinh(z - \pi i)\\
+    \sinh(u-\pi i) = - \sinh(u)\\
+\end{gather*}
+Realizando la expansión en series para $\sinh u$ y posteriormente remplazando $z$ se obtiene.
+
+\begin{mdframed}
+    \vspace{-0.4cm}
+    \begin{gather}
+        \sin(z) = - \sumserie \frac{(z- \pi i)^{2n+1}}{(2n+1)!} 
+    \end{gather}
+\end{mdframed}

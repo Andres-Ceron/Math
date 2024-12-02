@@ -1,0 +1,86 @@
+\begin{problem}{3}
+    Show that the integral 
+    \begin{gather*}
+        \int_{3+4i}^{4-3i}(4z^2 - 3iz)dz 
+    \end{gather*}
+    has the same value on the two paths:
+    \begin{enumerate}
+        \item the straight line connecting the integration limits
+        \item an arc on the circle $|z| = 5$
+    \end{enumerate}
+\end{problem}
+
+\section*{Solución}
+
+\begin{enumerate}
+    \item Si se quiere parametrizar con la linea que une los limites de integración, primero es necesario establecer la función $f(z)$ en términos de $x$ y $y$. 
+    
+    \begin{gather*}
+        f(z) = 4z^2 - 3iz  = 4(x+iy)^2 - 3i(x+iy)\\
+        f(z) = 4(x^2 - y^2) + 3y + i(8xy - 3x)
+    \end{gather*}
+
+    Ahora, la linea que parametriza debe pasar por los puntos $(3,4)$ y $(4,-3)$, entonces debe tener una pendiente $m = (4-(-3))/(3-4) = -7$ y un punto de corte tal que satisfaga la ecuación $y_1 = -7(x_1) + b$, es decir, $b = 25$. Esto quiere decir que la linea que parametriza la integral es $y = -7x + 25$. Remplazando el valor de $y$ se obtiene.
+
+    \begin{gather*}
+        f[z(x)] = 4(x^2 - (-7x + 25)^2) + 3( -7x + 25) + i(8x( -7x + 25) - 3x)\\
+        f[z(x)] =  -192x^2 + 1379x - 2425 + i(-56x^2 + 197x)
+    \end{gather*}
+
+    de forma similar para $y$ se obtiene 
+
+    \begin{gather*}
+        f[z(y)] = 4\left(x^2 - \left(\frac{25-y}{7}\right)^2\right) + 3\left(\frac{25-y}{7}\right) + i\left(8x\left(\frac{25-y}{7}\right) - 3x\right)\\
+        f[z(y)] = \frac{-192y^2 - 53y + 2500}{49} + i\frac{-8y^2 + 203y - 75}{7}
+    \end{gather*}
+
+    Por tanto, la integral queda expresada como 
+
+    \begin{gather*}
+        \int_{3+4i}^{4-3i}(4z^2 - 3iz)dz  = \int_{3+4i}^{4-3i}(4z^2 - 3iz)(dx + idy)\\
+        \int_{3+4i}^{4-3i}(4z^2 - 3iz)dz  = \int_{3+4i}^{4-3i}(4z^2 - 3iz)dx + \int_{3+4i}^{4-3i}(4z^2 - 3iz)idy
+    \end{gather*}
+
+    Aplicando las parametrizaciones propuestas, primero para $x$
+
+    \begin{gather*}
+        \int_{3}^{4}(4z^2 - 3iz)dx  = \int_{3}^{4}(-192x^2 + 1379x - 2425 + i(-56x^2 + 197x))dx\\
+        \int_{3}^{4}(4z^2 - 3iz)dx  = \left[-192\frac{x{^3}}{3} + 1379\frac{x{^2}}{2} - 2425x + i\left(-56\frac{x{^3}}{3} + 197\frac{x{^2}}{2}\right)\right]_3^{4}\\
+        \int_{3}^{4}(4z^2 - 3iz)dx  = \frac{67}{2} - i\frac{7}{6}
+    \end{gather*}
+
+
+Ahora para $y$
+
+    \begin{gather*}
+        \int_{3+4i}^{4-3i}(4z^2 - 3iz)idy = \int_{4}^{-3}\left(\frac{-192y^2 - 53y + 2500}{49} + i\frac{-8y^2 + 203y - 75}{7}\right)idy\\
+        \int_{3+4i}^{4-3i}(4z^2 - 3iz)idy = \frac{i}{49}\left[-192\frac{y^3}{3} - 53\frac{y^2}{2} + 2500y\right]_4^3 - \frac{1}{7}\left[-8\frac{y^3}{3} + 203\frac{y^2}{2} - 75y\right]\\
+        \int_{3+4i}^{4-3i}(4z^2 - 3iz)idy = -\frac{49}{6} -i\frac{469}{2}
+    \end{gather*}
+
+    Por tanto, la solución será
+
+    \begin{mdframed}
+        \vspace{-0.25cm}
+        \begin{gather}
+            \int_{3+4i}^{4-3i}(4z^2 - 3iz)dz = \frac{67}{2} - i\frac{7}{6} -\frac{49}{6} -i\frac{469}{2} = \frac{76 - 707i}{3}
+        \end{gather}    
+        \vspace{-0.3cm}
+    \end{mdframed}
+
+\item Parametrizando con un circulo de radio $|z| = 5$, usando la representación polar, esta parametrización esta dada por $z(\theta) = 5e^{i\theta}$, remplazando se obtiene $f[z(\theta)] = 4(25e^{2i\theta})  - 15ie^{i\theta}$, y $z'(\theta) = 5ie^{i\theta}$. Remplazando en la integral se obtiene que
+
+\begin{gather*}
+    \int_C f(z)dz = \int_{\theta_1}^{\theta_2}  (100e^{2i\theta}  - 15ie^{i\theta})5ie^{i\theta}d\theta\\
+    \int_C f(z)dz = 500i \int_{\theta_1}^{\theta_2} e^{3i\theta}d\theta  + 75 \int_{\theta_1}^{\theta_2} e^{2i\theta}d\theta\\
+    \int_C f(z)dz = \left[\frac{500e^{3i\theta}}{3}   + \frac{75e^{2i\theta}}{2i}\right]_{\theta_1}^{\theta_2}
+\end{gather*}
+
+Ahora, los limites de la integral están dados por $\theta_1 = \arctan(4/3)$ y $\theta_2 = \arctan(-3/4)$
+
+\begin{gather*}
+    \int_C f(z)dz = \frac{500}{3}\left[  e^{3i\theta_2} - e^{3i\theta_1} \right]  - \frac{75i}{2}\left[  e^{2i\theta_2} - e^{2i\theta_1}\right]\\
+    \int_C f(z)dz = \frac{500}{3}\left[ \frac{-44 - 117i}{125} - \frac{-117 + 44i}{125} \right]  - \frac{75i}{2}\left[  \frac{7 - 24i}{25} - \frac{-7 + 24i}{25}\right]\\
+    \int_C f(z)dz = \frac{76 - 707i}{3}
+\end{gather*}
+\end{enumerate}

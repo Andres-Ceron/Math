@@ -1,0 +1,283 @@
+\section{Integrales}
+
+\subsection{Integrales definidas de funciones de variable real}
+
+Considere el caso de una función compleja pero que dependa de una variable real $t$, esto implica entonces 
+
+\begin{gather}
+    w(t) = u(t) + iv(t)
+\end{gather}
+donde $u$ y $v$ son funciones de \textit{valor real} de la variable $t$. Esto permite entonces definir su derivada como 
+
+\begin{gather}
+    w^{\prime}(t) = u^{\prime}(t) + iv^{\prime}(t)
+\end{gather}
+esto permite concluir que $w(t)$ es una función de \textit{valor complejo} que esta compuesta por dos funciones de valor real. Por tanto una integración sobre una función compleja esta definida como la integración de dos funciones de valor real.
+
+\begin{gather}
+    \int_{a}^{b}w(t)dt = \int_{a}^{b}u(t)dt + i\int_{a}^{b}v(t)dt
+\end{gather}
+esto implica que para que la integral exista, entonces las funciones $u$ y $v$ deben ser continuas a trozos en el intervalo $a \leq t \leq b$. Debido a que la integración de una función compleja de variable real desemboca en dos integrales de funciones reales entonces las propiedades estudiadas sobre funciones reales se cumplirán de la misma forma. Es entonces que debido al teorema fundamental del cálculo se cumple 
+
+\begin{gather}
+    \int_{a}^{b}w(t)dt =  \left.U(t)\right|_a^{b} + iV(t)|_a^{b} = [U(b) + iV(b)] - [U(a) + iV(a)]
+\end{gather}
+Pese a que muchas de las reglas del calculo integral se cumplen para funciones complejas de variable real, existen excepciones como lo puede ser el caso del teorema de valor medio. 
+
+\subsection{Contornos}
+
+Las integrales de funciones complejas con \textbf{variable compleja} se definen sobre curvas en el plano complejo, y no sólo en intervalos de la recta real.\newline \\
+Un conjunto de puntos $z = (x, y)$ en el plano complejo se dice que es un arco si
+
+\begin{align*}
+    x = x(t), && y = y(t) && (a \leq t \leq b)
+\end{align*}
+donde $x(t)$ y $y(t)$ son funciones continuas del parámetro real $t$. Esta definición establece un mapeo continuo del intervalo $a \leq t \leq b$ dentro del plano $xy$ y los puntos de la imagen se ordenan según valores crecientes de $t$. Es entonces conveniente los puntos de $C$ mediante la ecuación 
+
+\begin{align}
+    \label{eq:s3.2-1}z = z(t) && \text{donde}&& z(t) = x(t) + iy(t) 
+\end{align}
+estos corresponden a los puntos del plano complejo sobre una curva que corresponden a los valores reales que se encuentran dentro del intervalo $a \leq t \leq b$. Si la curva no se intercepta así misma entonces se dice que es un arco simple, pero si esta curva se intercepta solo en el punto $z(a) = z(b)$, entonces se dice que es una curva cerrada simple.\newline \\
+La representación paramétrica utilizada para cualquier arco C no es única, de hecho, es posible cambiar el intervalo sobre el que se extiende el parámetro a cualquier otro intervalo.
+
+\begin{gather}
+    t = \phi(\tau) \;\;\;\; (\alpha \leq \tau \leq \beta)
+\end{gather}
+donde $\phi$ es función de valor real mapeada en un intervalo  $\alpha \leq \tau \leq \beta$ dentro del intervalo $a \leq t \leq b$. Donde $\phi$ y su derivada deben ser continuas, esto permite realizar una transformación sobre la ecuación (\ref*{eq:s3.2-1})
+
+\begin{align}
+    z = z[\phi(\tau)] && (\alpha \leq \tau \leq \beta)
+\end{align}
+Suponga ahora las componentes $x^{\prime}(t)$ y $y^{\prime}(t)$ de la derivada de la función $z(t)$, esto permite definir una función de valor real llamada arco diferenciable
+
+\begin{gather*}
+    |z^{\prime}(t)| = \sqrt{[x^{\prime}(t)]^2 + [y^{\prime}(t)]^2}
+\end{gather*}
+recordando que la definición de longitud de arco en calculo integral estaba dada por
+
+\begin{gather*}
+    L = \int_{a}^{b}|z^{\prime}(t)|dt 
+\end{gather*}
+debido a que la longitud de arco debe permanecer invariante ante ciertas transformaciones, entonces es posible re definir esta ecuación de la siguiente forma
+
+\begin{gather*}
+    L = \int_{a}^{b}|z^{\prime}[\phi(\tau)]|\phi^{\prime}(\tau)d\tau 
+\end{gather*}
+esto permite demostrar que la longitud de $C$ será la misma ante parametrizaciones de la curva.\newline\\ 
+Los puntos de cualquier curva simple cerrada o contorno simple cerrado $C$ son puntos límite de dos dominios distintos, uno de los cuales es el interior de $C$ y está acotado, el otro que es el exterior de $C$ y no está acotado.
+
+\subsection{Integrales de contorno}
+
+Las integrales de funciones complejas $f$ de variable compleja $z$ están definidas en términos de los valores $f(z)$ a lo largo de un contorno dado $C$, que se prolonga de un punto $z = z_1$ a otro $z = z_2$ contenidos en el plano complejo, es decir, una integral de linea; y su valor depende en general tanto del contorno $C$ como de la función $f$. Se definirá la integración de estas funciones en términos de integración de funciones de valor real, para tal propósito suponga la función 
+
+\begin{gather*}
+    z = z(t) \;\;\;\;\;\; (a \leq t \leq b)
+\end{gather*}
+que representa el contorno $C$, el cual va del punto $z_1 = z(a)$ a $z_2 = z(b)$. También se asume que $f[z(t)]$ es una función continua a trozos dentro del intervalo y nos referimos entonces a la función $f(z)$ continua dentro del contorno $C$. Esto permite definir la integral de linea o \textbf{integral de contorno} de $f$ a lo largo de $C$ en términos del parámetro $t$ 
+
+\begin{gather*}
+    \int_C f(z)dz = \int_{a}^{b}f[z(t)]z^{\prime}(t)dt
+\end{gather*}
+El resultado de esta integral resulta ser invariante ante parametrizaciones como se concluyó anteriormente. Este resultado permite entonces establecer las propiedades de esta integración 
+
+\begin{gather*}
+    \int_C z_0f(z)dz = z_0\int_C f(z)dz\\
+    \int_C [f(z) + g(z)]dz = \int_C f(z)dz + \int_C  g(z)dz\\
+    \int_{-C} f(z)dz = -\int_C f(z)dz\\
+    \int_{a}^{b}f[z(t)]z^{\prime}(t)dt = \int_{a}^{c}f[z(t)]z^{\prime}(t)dt + \int_{c}^{b}f[z(t)]z^{\prime}(t)dt \\
+    \int_{C}f(z)dz = \int_{C_1}f(z)dz + \int_{C_2}f(z)dz
+\end{gather*}
+
+\subsection{Antiderivadas}
+
+Aunque el valor de una integral de contorno de una función $f(z)$ desde un punto fijo $z_1$ a otro punto fijo $z_2$ depende, en general, del camino que se recorra, hay ciertas funciones cuyas integrales tienen valores independientes del recorrido.
+
+\begin{mdframed}
+    \textbf{Teorema:}\\
+Suponga que una función $f(z)$ es continua en un dominio $D$. Si una de las siguientes afirmaciones es correcta entonces las otras también lo serán.
+
+\begin{enumerate}
+    \item $f(z)$ tiene una antiderivada $F(z)$ en todo $D$
+    \item Las integrales de $f(z)$ a lo largo de los contornos situados enteramente en $D$ y que se extienden desde cualquier punto fijo $z_1$ a cualquier punto fijo $z_2$ tienen todas el mismo valor.
+    \item Las integrales de $f(z)$ alrededor de contornos cerrados situados enteramente en D tienen todas valor cero.
+\end{enumerate}
+\end{mdframed}
+Hay que resaltar que el teorema no afirma que alguna de estas afirmaciones sea cierta para una función $f(z)$ dada, sólo dice que todas ellas son verdaderas o que ninguna de ellas lo es.
+
+\subsection{Teorema de Cauchy-Goursat}
+
+Suponga un contorno simple cerrado $C$ denotado por la función $z = z(t)$ en el intervalo  $a \leq t \leq b$, adicionalmente considere que esta descrito en dirección positiva. Ahora suponga una función $f$ que es analítica para todo punto dentro de $C$, mediante una parametrización se establece que la integral de esta función sobre $C$ será 
+
+\begin{gather}
+    \int_C f(z)dz = \int_{a}^{b}f[z(t)]z^{\prime}(t)dt
+\end{gather}
+donde 
+
+\begin{align*}
+    f(z) = u(x,t) + i(x,y) && z(t) = x(t) + iy(t)
+\end{align*}
+esto implica entonces la parametrización
+
+\begin{gather*}
+    f[z(t)] = u[x(t), y(t)] + iv[x(t),y(t)]
+\end{gather*}
+remplazando
+
+\begin{gather*}
+    \int_C f(z)dz = \int_{a}^{b} \left( u[x(t), y(t)] + iv[x(t),y(t)]\right)\left(x^{\prime}(t) + iy^{\prime}(t)\right)dt\\
+    \int_C f(z)dz = \int_{a}^{b} \left( ux^{\prime} - vy^{\prime}\right)dt     + i\int_{a}^{b}\left(vx^{\prime} + uy^{\prime}\right)dt
+\end{gather*}
+en términos de integrales de línea de funciones de valor real de dos variables reales, recordando que $x^{\prime} = dx/dt$ y $y^{\prime} = dy/dt$ 
+
+\begin{gather}
+    \int_C f(z)dz = \int_{C} \left( u dx - vdy\right) + i\int_{C}\left(v dx + udy\right)
+\end{gather}
+esta expresión es valida para cualquier contorno $C$, siempre y cuando $f[z(t)]$ sea continua a trozos dentro del contorno. \newline \\
+Recordando que el teorema de green establece que para dos funciones $P(x,y)$ y $Q(x,y)$, que junto con sus derivadas parciales de primer orden, son continuas dentro de una región $R$ que contiene todos los puntos interiores y sobre el contorno simple cerrado $C$, se cumple 
+
+\begin{gather}
+    \int_C Pdx + Qdy  = \int\int_R (Q_x - P_y)dA
+\end{gather}
+como $f$ será continua en $R$, debido a que es analítica para todo $C$. Entonces las funciones $u$ y $v$ también serán continuas en $R$, esto implica entonces 
+
+\begin{gather*}
+    \int_C f(z)dz = \int\int_R (-v_x - u_y)dA  + i\int\int_R (u_x - v_y)dA
+\end{gather*}
+debido a que $f$ es analítica, entonces debe cumplir con las condiciones de Cauchy-Riemann $u_x = v_y, -v_x = u_y$, remplazando 
+
+\begin{gather}
+    \int_C f(z)dz = \int\int_R (u_y - u_y)dA  + i\int\int_R (v_y - v_y)dA = 0
+\end{gather}
+Una vez establecido que el valor de esta integral es cero,
+la orientación de $C$ es irrelevante, esto implica
+
+\begin{gather*}
+    \int_C f(z)dz = - \int_{-C} f(z)dz  = 0
+\end{gather*}
+Goursat fue el primero en demostrar que la condición de continuidad sobre $f^{\prime}$ puede ser omitida.
+
+\begin{mdframed}
+    \textbf{Teorema:}\\
+Si una función $f$ es analítica en todos los puntos interiores y en un contorno cerrado simple $C$, entonces
+
+\begin{gather}
+    \int_C f(z)dz = 0
+\end{gather}
+\end{mdframed}
+
+\subsection{Dominios Simplemente Conexos}
+
+Un dominio simplemente conexo $D$ es un dominio tal que cada contorno cerrado simple dentro de él, solo encierre puntos de $D$, es decir, que contornos cerrados dentro del dominio solo pueden encerrar puntos pertenecientes a $D$. 
+
+\begin{mdframed}
+    \textbf{Teorema:}\\
+Si una función $f$ es analítica en un dominio $D$ simplemente conexo, entonces
+\begin{gather}
+    \int_C f(z)dz = 0
+\end{gather}
+para todo contorno cerrado $C$ situado en $D$.
+\end{mdframed}
+La demostración es fácil si $C$ es un contorno cerrado simple o si es un contorno cerrado que se interseca a sí mismo un número finito de veces. Porque si $C$ es simple y está en $D$, la función f es analítica en cada punto interior a y sobre $C$; y el teorema de Cauchy asegura que se cumple la ecuación. Para el caso en que $C$ se intersecta un número finito de veces forma un número finito de contornos cerrados simples, donde el teorema de Cauchy se cumple para cada uno.
+
+\begin{gather*}
+    \int_C f(z)dz  = \sum_{k=1}^{N} \int_{C_k}f(z)dz = 0
+\end{gather*}
+\textbf{Ejemplo:}\\
+Si $C$ denota un contorno cerrado contenido en un disco abierto $|z| <2$, entonces 
+
+\begin{gather*}
+    \int_C \frac{ze^z}{(z^2 + 9)^5} = 0
+\end{gather*}
+esto se cumple debido a que las singularidades de esta función ($z \pm 3i$) se encuentran fuera del disco.
+\begin{mdframed}
+    \textbf{Corolario:}\\
+    Una función $f$ que es analítica en todo un dominio simplemente conexo $D$ debe tener una antiderivada en cualquier parte de $D$. 
+\end{mdframed}
+
+\subsection{Dominios Multiconexos}
+Se dice que un dominio que no es simplemente conexo (Sec. 48) es conexo múltiple.
+\begin{mdframed}
+    \textbf{Teorema:}\\
+    Suponga que
+    \begin{enumerate}
+        \item  $C$ es contorno cerrado simple, descrito en la dirección contraria a las manecillas del reloj.
+        \item $C_k$ son contornos cerrados simples interiores a $C$, todos descritos en dirección a las manecillas del reloj, que son disjuntos y cuyos interiores no tengan puntos en común
+    \end{enumerate}
+    Si una función $f$ es analítica en todos estos contornos y en todo el dominio multiconexo, es decir, en los puntos interiores a $C$ y exteriores a cada $C_k$, entonces
+    \begin{gather*}
+        \int_{C} f(z)dz + \sum_{k=1}^{n}\int_{C_k}f(z)dz = 0
+    \end{gather*}
+\end{mdframed}
+Obsérvese que en esta ecuación, la dirección de cada trayectoria de integración es tal que el dominio de multiconexo se encuentra a la izquierda de dicha trayectoria.
+
+\begin{mdframed}
+    \textbf{Corolario:}\\
+    Sean $C_1$ y $C_2$ contornos cerrados simples orientados positivamente, donde $C_1$ es interior a $C_2$. Si una función $f$ es analítica para todos los puntos en la región que esta encerrada entre ambos contornos, entonces 
+    \begin{gather*}
+        \int_{C_2} f(z)dz = \int_{C_2}f(z)dz
+     \end{gather*}
+\end{mdframed}
+Este corolario es conocido como el principio de deformación de caminos, ya que, dice que si $C_1$ se deforma continuamente en $C_2$, pasando siempre por los puntos en donde $f$ es analítica, entonces el valor de la integral de $f$ sobre $C_1$ nunca cambia.\newline
+\textbf{Ejemplo:}\\
+Demostrar que 
+\begin{gather*}
+    \int_C \frac{dz}{z} = 2\pi i
+\end{gather*}
+Para ello, se construye una circunferencia de orientación positiva $C_0$ con centro en el origen y radio tan pequeño que $C_0$ se encuentra completamente dentro de $C$.
+
+\begin{gather*}
+    \int_{C_0} \frac{dz}{z} = \int_{-\pi}^{+\pi}\frac{iRe^{i\theta}}{Re^{i\theta}}d\theta = i\int_{-\pi}^{+\pi}d\theta = 2\pi i
+\end{gather*}
+Y como $1/z$ es analítica en todas partes menos en $z=0$, entonces mediante el principio de deformación de caminos.
+
+\begin{gather*}
+    \int_C \frac{dz}{z} = \int_{C_0} \frac{dz}{z} = 2\pi i
+\end{gather*}
+
+\subsection{Integral de Cauchy}
+\begin{mdframed}
+    \textbf{Teorema:}\\
+    Suponga una función $f$ que es analítica para todo el interior de un contorno cerrado simple $C$, descrito en sentido positivo. Si $z_0$ es un punto interior a $C$, entonces
+    \begin{gather*}
+        f(z_0) = \frac{1}{2\pi i }\int_C \frac{f(z)dz}{z-z_0}
+    \end{gather*}
+\end{mdframed}
+esta expresión es conocida como la integral de Cauchy. Dice que si una función $f$ es analítica dentro y sobre un contorno cerrado simple $C$, entonces los valores de $f$  en el interior de $C$ están completamente determinas por los valores de $f$ sobre $C$.
+
+\begin{gather*}
+    \int_C \frac{f(z)dz}{z-z_0} = 2\pi if(z_0)
+\end{gather*}
+\textbf{Ejemplo:}\\
+Sea $C$ un circulo de radio $|z| = 2$, orientado positivamente. Considere también la siguiente función
+
+\begin{gather*}
+    f(z) = \frac{z}{9 - z^2}
+\end{gather*}
+como esta función es analítica dentro y sobre $C$, debido a que $z_0 = -i$ está dentro de $C$, entonces
+
+\begin{gather*}
+    \int_C \frac{zdz}{(9-z^2)(z+i)} = \int_C \frac{z/(9 - z^2)}{z - (-i)}dz = 2\pi if(-i) = 2\pi i \frac{-i}{10} = \frac{\pi}{5}
+\end{gather*}
+
+\subsection{Extensión de la integral de Cauchy}
+La integración de Cauchy puede ser extendida para proporcionar una representación integral de las derivadas de $f$ evaluadas en $z_0$. Para tal objetivo se supondrá una función $f$ que es analítica sobre y en todo el interior de un contorno cerrado simple $C$, descrito en sentido positivo. Es decir, se cumplirá el teorema de la integral de Cauchy
+
+\begin{gather}
+    f(z) = \frac{1}{2\pi i}\int_C \frac{f(s)ds}{s-z}
+\end{gather}
+donde $z$ es un punto interior a $C$ y $s$ son todos los puntos contenidos en $C$. Derivando respecto a $z$ ambos lados de la igualdad,
+
+\begin{gather*}
+    f^{\prime}(z) = \frac{1}{2\pi i}\int_C \frac{f(s)ds}{(s-z)^2}
+\end{gather*}
+esta expresión se puede generalizar (demostrando la existencia de las integrales)
+
+\begin{gather*}
+    f^{(n)}(z) = \frac{n!}{2\pi i}\int_C \frac{f(s)ds}{(s-z)^{n+1}}
+\end{gather*}
+expresando esta generalidad de la siguiente forma
+
+\begin{gather}
+    \int_C \frac{f(z)}{(z - z_0)^{n+1}} = \frac{2\pi i}{n!}f^{(n)}(z_0)
+\end{gather}
+estas expresiones pueden ser útiles para evaluar ciertas integrales cuando $f$ es analítica dentro y sobre un contorno cerrado simple $C$, tomado en sentido positivo, y $z_0$ es cualquier punto interior a $C$.

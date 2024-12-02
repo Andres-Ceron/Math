@@ -1,0 +1,87 @@
+\begin{problem}{5}
+    Given $w = f(z) = u + iv$, suppose that the first-order partial derivatives of $u$ and $v$ with respect to $x$ and $y$ exist everywhere in some neighborhood of a given nonzero point $z_0$ and are continuous at $z_0$. Show that:
+
+\begin{gather*}
+    u_x = u_r\cos\theta - u_\theta\frac{\sin\theta}{r} \;\;\;\;\;\; u_y = u_r\sin\theta + u_\theta \frac{\cos\theta}{r}
+\end{gather*}
+\end{problem}
+
+\section*{Solución}
+
+En primer lugar, se supone a $f(z)$ como uan función analítica, es decir, las condiciones de Cauchy-Riemann se cumplirán en su forma cartesiana. 
+
+\vspace{0.5cm}
+
+La función compleja $f(z)$ tiene tanto su representación cartesiana como polar. Para ultima, se define $u$ y $v$ en función de las variables $\theta$ y $r$ de la siguiente forma. 
+
+\begin{gather*}
+    x = r\cos\theta\\
+    y = r\sin\theta
+\end{gather*}
+
+Esto permite expresar la función $f$ como
+
+\begin{gather*}
+    f(z) = u(r,\theta) + iv(r,\theta)
+\end{gather*}
+
+Derivando parcialmente $u$ respecto a $r$.
+\begin{gather*}
+    \frac{\partial u}{\partial r} = \frac{\partial u}{\partial x}\frac{\partial x}{\partial r} + \frac{\partial u}{\partial y}\frac{\partial y}{\partial r}\\     
+    u_r = u_x\cos\theta + u_y\sin\theta    
+\end{gather*}
+
+De forma análoga para $\theta$
+\begin{gather*}
+    \frac{\partial u}{\partial \theta} = \frac{\partial u}{\partial x}\frac{\partial x}{\partial \theta} + \frac{\partial u}{\partial y}\frac{\partial y}{\partial \theta}\\     
+    u_\theta = - u_x r\sin\theta + u_yr\cos\theta    
+\end{gather*}
+
+Tomando estas dos expresiones se forma un sistema de dos ecuaciones con dos incógnitas (Solucionando para $u_x$ y $u_y$).
+
+\begin{equation*}
+    \left\{\begin{matrix}
+        u_r = u_x\cos\theta + u_y\sin\theta\\
+        u_\theta = - u_x r\sin\theta + u_yr\cos\theta
+    \end{matrix}\right.
+\end{equation*}
+
+
+Para la primera ecuación se despeja $u_x$ y se remplaza en la segunda ecuación 
+
+\begin{gather*}
+    u_x = \frac{u_r}{\cos\theta} - \frac{u_y\sin\theta}{\cos\theta}\\
+    u_\theta = - \left(\frac{u_r}{\cos\theta} - \frac{u_y\sin\theta}{\cos\theta}\right) r\sin\theta + u_yr\cos\theta\\
+    u_\theta =  -\frac{ru_r\sin\theta}{\cos\theta} + \frac{u_yr\sin^2\theta}{\cos\theta}  + u_yr\cos\theta\\
+    u_\theta \cos\theta + ru_r\sin\theta = u_yr\sin^2\theta  + u_yr\cos^2\theta\\
+    \frac{u_\theta \cos\theta}{r} + u_r\sin\theta = u_y(\sin^2\theta  +\cos^2\theta)\\
+\end{gather*}
+
+Entonces el valor de $u_y$ será 
+
+\begin{mdframed}
+    \vspace{-0.25cm}
+    \begin{gather}
+        u_y = u_r\sin\theta + \frac{u_\theta \cos\theta}{r}
+    \end{gather}
+    \vspace{-0.3cm}
+\end{mdframed}
+
+y remplazando en $u_x$
+
+\begin{gather*}
+    u_x = \frac{u_r}{\cos\theta} - \left(\frac{u_\theta \cos\theta}{r} + u_r\sin\theta \right)\frac{\sin\theta}{\cos\theta}\\
+    u_x = \left(\frac{u_r}{\cos\theta} -  \frac{u_r\sin^2\theta}{\cos\theta}\right) - \frac{u_\theta\sin\theta}{r} \\
+    u_x = \frac{u_r(1-\sin^2\theta)}{\cos\theta}  - \frac{u_\theta\sin\theta}{r} \\
+    u_x = \frac{u_r(1-\sin^2\theta)}{\cos\theta}  - \frac{u_\theta\sin\theta}{r}
+\end{gather*}
+
+Finalmente 
+
+\begin{mdframed}
+    \vspace{-0.25cm}
+    \begin{gather}
+        u_x = u_r\cos\theta  - \frac{u_\theta\sin\theta}{r}
+\end{gather}
+    \vspace{-0.3cm}
+\end{mdframed}

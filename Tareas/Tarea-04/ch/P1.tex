@@ -1,0 +1,36 @@
+\begin{problem}{1}
+    Obtain the Maclaurin series representation
+    \begin{gather}
+        \label{eq:p1}z\cosh(z^2) = \sumserie \frac{z^{4n+1}}{(2n)!}
+    \end{gather}
+\end{problem}
+En esta demostración se tomaran como valida las siguientes expresiones 
+
+\begin{gather}
+    \label{eq:csh}\cosh(z) = \cos(iz)\\
+    \label{eq:ss} \sin(z) = \sumserie \frac{(-1)^n z^{2n+1}}{(2n+1)!}
+\end{gather}
+Derivando la expresión (\ref*{eq:ss}) se obtiene
+
+\begin{gather*}
+    \cos(z) = \sumserie (-1)^n\frac{2n+1}{(2n+1)!}z^{2n} = \sumserie (-1)^n\frac{2n+1}{(2n+1)(2n)!}z^{2n}
+\end{gather*}
+\begin{gather}
+    \label{eq:sc}\cos(z) = \sumserie \frac{(-1)^nz^{2n}}{(2n)!}
+\end{gather}
+Con la serie del coseno (\ref*{eq:sc}) y con la relación entre el coseno hiperbólico se obtiene
+
+\begin{gather*}
+    \cosh(z) = \cos(iz) = \sumserie \frac{(-1)^n(iz)^{2n}}{(2n)!}\\
+    \cosh(z) = \sumserie \frac{(-1)^n(-1)^nz^{2n}}{(2n)!}= \sumserie \frac{z^{2n}}{(2n)!}
+\end{gather*}
+Finalmente con esta expresión se puede obtener la serie de Maclaurin de (\ref*{eq:p1}).
+
+\begin{mdframed}
+    \vspace{-0.5cm}
+    \begin{gather}
+        z\cosh(z^2) = z\sumserie \frac{(z^2)^{2n}}{(2n)!} = z\sumserie \frac{z^{4n}}{(2n)!} =  \sumserie \frac{z^{4n+1}}{(2n)!}
+    \end{gather}    
+\end{mdframed}
+
+

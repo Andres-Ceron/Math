@@ -1,0 +1,49 @@
+\begin{problem}{6}
+    With the aid of the polar form of the Cauchy-Riemann equations, derive the alternative form:
+
+    \begin{gather*}
+        f^{\prime}(z_0) = -\frac{i}{z_0}(u_\theta + iv_\theta)
+    \end{gather*}
+\end{problem}
+
+Si realizamos el mismo proceso que el ejercicio anterior pero para $v$ se obtiene el sistema de ecuaciones 
+
+\begin{equation*}
+    \left\{\begin{matrix}
+        v_r = v_x\cos\theta + v_y\sin\theta\\
+        v_\theta = - v_x r\sin\theta + v_yr\cos\theta
+    \end{matrix}\right.
+\end{equation*}
+
+y las soluciones para este sistema de ecuaciones son análogas a $u$.
+
+\begin{gather*}
+    v_x = v_r\cos\theta  - \frac{v_\theta\sin\theta}{r}\\
+    v_y = v_r\sin\theta + \frac{v_\theta \cos\theta}{r}
+\end{gather*}
+
+Remplazando estos valores en la definición de una derivada compleja. 
+
+\begin{gather*}
+    \frac{df}{dz} = u_r\cos\theta  - \frac{u_\theta\sin\theta}{r} + i\left(v_r\cos\theta  - \frac{v_\theta\sin\theta}{r}\right)
+\end{gather*}
+
+Para que esta función sera derivable se tienen que cumplir las ecuaciones de Cauchy Riemann en su forma polar, esto nos permite expresar $ru_r = v_\theta$ y  $-rv_r = u_\theta$. Remplazando 
+
+\begin{gather*}
+    \frac{df}{dz} = u_r\cos\theta  - \frac{(-rv_r)\sin\theta}{r} + i\left(v_r\cos\theta  - \frac{ru_r\sin\theta}{r}\right)\\
+    \frac{df}{dz} = u_r\cos\theta  + v_r\sin\theta + i\left(v_r\cos\theta  - u_r\sin\theta\right)\\
+    \frac{df}{dz} = (u_r + iv_r)\cos\theta  - i( u_r+iv_r)\sin\theta\\
+    \frac{df}{dz} = e^{-i\theta}(u_r + iv_r)
+\end{gather*}
+
+Este es la ecuación para la derivada de una función compleja en función de las derivadas sobre $r$. Ahora si aplicamos nuevamente las condiciones de Cauchy-Riemann se obtiene 
+
+
+\begin{mdframed}
+    \vspace{-0.25cm}
+    \begin{gather}
+        \frac{df}{dz} = \frac{1}{e^{i\theta}}\left(\frac{v_\theta}{r} - i\frac{u_\theta}{r}\right) = -\frac{i}{re^{i\theta}}\left(u_\theta + iv_\theta\right)
+    \end{gather}    
+    \vspace{-0.3cm}
+\end{mdframed}

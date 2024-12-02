@@ -1,0 +1,27 @@
+\begin{problem}{4}
+    Rederive the Maclaurin series for the function $f(z) = \cos z$ by using th definition:
+    \begin{gather}
+        \cos z = \frac{e^{iz} + e^{-iz}}{2}
+    \end{gather}    
+\end{problem}
+
+Recordando la definición de la serie de Maclaurin para la función $f(z) = e^{z}$
+
+\begin{gather}
+    e^{z} = \sumserie \frac{z^n}{n!}
+\end{gather}
+Remplazando en la función $\cos(z)$
+
+\begin{gather*}
+    \cos z = \frac{e^{iz} + e^{-iz}}{2} = \frac{1}{2}\left(\sumserie \frac{(iz)^n}{n!} + \sumserie \frac{(-iz)^n}{n!}\right)\\
+    \cos z = \frac{1}{2}\sumserie\left( 1 + (-1)^n\right)\frac{(iz)^n}{n!}
+\end{gather*}
+Entonces, para el termino entre paréntesis se obtienen dos valores; 0  cuando $n = 2n + 1$ y 2 cuando $n = 2n$. Tomando los valores no nulos de la serie se obtienen
+
+\begin{mdframed}
+    \vspace{-0.4 cm}
+    \begin{gather}
+        \cos z = \frac{1}{2}\sumserie \frac{2(iz)^{2n}}{(2n)!} = \sumserie \frac{(-1)^n z^{2n}}{(2n)!}
+    \end{gather}
+\end{mdframed}
+

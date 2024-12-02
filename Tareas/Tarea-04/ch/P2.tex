@@ -1,0 +1,30 @@
+\begin{problem}{2}
+    Find the Maclaurin series expansion of the function:
+    \begin{gather}
+        \label{eq:p2}f(z) = \frac{z}{z^{4} + 4 } = \frac{z}{4}\cdot\frac{1}{1+ (z^4/4)}
+    \end{gather}    
+\end{problem}
+Primero es necesario establecer los valores de $z$ para los cuales esta función es analítica. La función deja de ser cuando el denominador se hace cero. 
+
+\begin{gather*}
+    z^4 = 4 \rightarrow |z| < \sqrt{2}
+\end{gather*}
+Entonces la expansion en series de Maclaurin solo se cumplirá en este intervalo. Recordando la siguiente expresión 
+
+\begin{gather}
+    \label{eq:s-geo}\frac{1}{1 - z} = \sumserie z^n
+\end{gather}
+Remplazando $z = - z^4/4$ en (\ref*{eq:s-geo})
+
+\begin{gather*}
+    \frac{1}{1 + (z^4/4)} = \sumserie \left(-\frac{z^4}{4}\right)^n = \sumserie (-1)^n\left(\frac{z^4}{4}\right)^n
+\end{gather*}
+Finalmente remplazamos en (\ref*{eq:p2})
+
+\begin{mdframed}
+    \vspace{-0.4cm}
+    \begin{gather}
+        f(z) = \frac{z}{4} \sumserie (-1)^n\left(\frac{z^4}{4}\right)^n \;\;\;\; |z| < \sqrt{2}\\
+        f(z) = \sumserie(-1)^n \frac{z^{4n+1}}{2^{2n+2}} \;\;\;\; |z| < \sqrt{2}
+    \end{gather}
+\end{mdframed}

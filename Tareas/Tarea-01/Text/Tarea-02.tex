@@ -1,0 +1,389 @@
+\documentclass[12pt,spanish]{article}
+\usepackage{multicol,caption} 
+\usepackage[utf8]{inputenc}  
+\usepackage[spanish,english]{babel}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{textcomp}
+\usepackage{nccmath} 
+\usepackage{amsmath, amsthm, amsfonts}
+\usepackage{enumerate}
+\usepackage{caption}
+\usepackage{indentfirst} 
+\usepackage{titlesec}
+\usepackage{authblk}
+\usepackage{hyperref}
+\usepackage[none]{hyphenat}
+\usepackage{apacite}
+\usepackage[right=1in,left=1in,top=1in,bottom=1in,includefoot]{geometry}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{enumerate}
+\usepackage{wrapfig}
+\usepackage{empheq}
+
+\newcommand*\widefbox[1]{\fbox{\hspace{2em}#1\hspace{2em}}}
+\newcommand{\myname}{Andrés F. Cerón}
+\newcommand{\assignment}{Métodos Matemáticos I}
+\newcommand{\duedate}{\today}
+\newcommand{\Titulo}{Tarea - 01: Funciones analíticas.}
+
+\pagestyle{fancy}
+\fancypagestyle{plain}
+{
+  \setlength{\topmargin}{-0.5in}
+  \setlength{\headheight}{1.05in}
+  \setlength{\headsep}{-0.0in}
+  \setlength{\headwidth}{\textwidth}
+  \setlength{\footskip}{2.0in}
+  \fancyhead[l]{
+    {\bf \assignment \hfill \myname} \\
+    Departamento de Física Aplicada - Verano 2024 \hfill \today
+  }
+}
+
+\pagestyle{myheadings}
+\markright{\bf{Funciones analíticas.}}
+
+
+\title{\Large \bf \Titulo}
+\author{}
+\date{}
+
+
+\begin{document}
+
+\thispagestyle{fancy}
+\maketitle
+\thispagestyle{plain}
+\let\oldthefootnote\thefootnote
+
+\let\thefootnote\oldthefootnote
+\setlength{\headheight}{0.65in}
+\setlength{\textheight}{8.60in}
+\pagestyle{myheadings}
+
+\vspace{-2cm}
+
+\section*{Problemas}
+
+\begin{enumerate}
+    \item  Prove algebraically that for complex numbers.
+    
+    \begin{equation*}
+        |z_1| - |z_2| \leq |z_1 + z_2| \leq |z_1| + |z_2|
+    \end{equation*}
+
+    \item Show that:
+
+    \begin{enumerate}
+        \item     
+            \begin{equation*}
+                \cos{n\theta} = \cos^n\theta - \binom{n}{2}\cos^{n-2}\theta\sin^2\theta + \binom{n}{4}\cos^{n-4}\sin^{4} - \dots 
+            \end{equation*}
+            
+        \item 
+            \begin{equation*}
+                \sin{n\theta} = \binom{n}{1}\cos^{n-1}\theta\sin\theta - \binom{n}{3}\cos^{n-3}\sin^{3} + \dots 
+            \end{equation*}
+    \end{enumerate}
+
+    Note. The quantities $\binom{n}{m}$ are binomial coefficents: $\binom{n}{m} = \frac{n!}{m!(n-m)!}$
+
+    \item  Prove that:
+    
+    \begin{enumerate}
+        \item
+            \begin{equation*}
+                \sum_{n = 0}^{ N - 1} \cos{nx} = \frac{\sin{(Nx/2)}}{\sin{x/2}}\cos{(N-1)}\frac{x}{2}
+            \end{equation*}
+    
+        \item
+            \begin{equation*}
+                \sum_{n = 0}^{ N - 1} \sin{nx} = \frac{\sin{(Nx/2)}}{\sin{x/2}}\sin{(N-1)}\frac{x}{2}
+            \end{equation*}
+    \end{enumerate}
+
+    Note. Parts (a) and (b) may be combined to form a geometric series.
+
+    \item  Assume that the trigonometric functions ($\sin{z}$ and $\cos{z}$) and the hyperbolic functions ($\sinh{z}$ and $\cosh{z}$) are defined for complex argument by the appropriate power series. Show that
+
+  \begin{enumerate}
+    \item $i\sin{z} = \sinh{iz}$
+    \item $\sin{iz} = i\sinh{z}$
+    \item $\cos{z} = \cosh{iz}$
+    \item $\cos{iz} = \cosh{z}$
+  \end{enumerate}
+
+\end{enumerate}
+
+\section*{Soluciones}
+
+\begin{enumerate}
+    
+    \item Suponemos que los valores de $z_1$ y $z_2$ están dados por
+    
+        \begin{gather}
+            z_1 = a + ib \wedge z_2 = c + id
+            \label{eq:z1z2}
+        \end{gather}
+
+        Con $a,b,c,d > 0$. Mediante la definición de los números complejos establecemos entonces la norma de cada uno mediante su complejo conjugado. Entonces, para $z_1$ se obtiene:
+
+        \begin{gather*}
+            |z_1|^2  = z_1z_1^{*}\\
+            |z_1|^2  = (a + ib)(a - ib)\\
+            |z_1|^2  = a^2 - aib + iba - (ib)^2\\
+            |z_1|^2  = a^2 - (ib)^2\\
+            |z_1|^2  = a^2 + b^2\\
+        \end{gather*}
+
+        de forma similar para $z_2$
+
+        \begin{gather*}
+            |z_2|^2  = z_2z_2^{*}\\
+            |z_1|^2  = (c + id)(c - id)\\
+            |z_1|^2  = c^2 + d^2\\
+        \end{gather*}
+
+        Por otro lado, podemos también calcular $|z_1 + z_2|$ de manera similar, pero realizando unas primeras consideraciones 
+
+        \begin{gather*}
+            |z_1 + z_2|^2 = (z_1 + z_2)(z_1 + z_2)^{*}\\
+            |z_1 + z_2|^2 = (z_1 + z_2)(z_1^{*} + z_2^{*})\\
+            |z_1 + z_2|^2 = z_1z_1^{*} + z_1z_2^{*} + z_2z_1^{*} + z_2z_2^{*}\\
+            |z_1 + z_2|^2 = |z_1|^2 + |z_2|^2 + z_1z_2^{*} + z_2z_1^{*} \\
+        \end{gather*}
+
+        Ahora si para las operaciones $z_1z_2^{*}$ y $z_2z_1^{*}$ remplazamos los valores correspondientes en Eq.\ref*{eq:z1z2},
+
+        \begin{gather*}
+            z_1z_2^{*} = (a+ib)(c-id)\\
+            z_1z_2^{*} = ac - aid + ibc - i^2bd\\
+            z_1z_2^{*} = ac - aid + ibc + bd\\
+        \end{gather*}
+        y
+        \begin{gather*}
+            z_2z_1^{*} = (c+id)(a-ib)\\
+            z_1z_2^{*} = ac - ibc +  ida - i^2bd\\
+            z_1z_2^{*} = ac - ibc +  ida + bd\\
+        \end{gather*}
+
+        Sumando ambos valores se obtiene 
+
+        \begin{gather*}
+            z_1z_2^{*} + z_2z_1^{*} = ac - aid + ibc + bd + ac - ibc +  ida + bd\\
+            z_1z_2^{*} + z_2z_1^{*} = ac + bd + ac +  bd\\
+            z_1z_2^{*} + z_2z_1^{*} = 2(ac + bd)\\
+            z_1z_2^{*} + z_2z_1^{*} = 2Re(z_1z_2^{*})\\
+        \end{gather*}
+
+        Si remplazamos obtenemos que
+
+        \begin{equation}
+            |z_1 + z_2|^2 = |z_1|^2 + |z_2|^2 +  2Re(z_1z_2^{*})\\
+            \label{eq:sumz}
+        \end{equation}
+
+        Ahora, por otro lado calculando el valor de $|z_1z_2^{*}|$, el cual se puede expresar como $|z_1||z_2^{*}|$ que es igual a $|z_1||z_2|$, de aquí se puede deducir que
+
+        \begin{equation}
+            Re(z_1z_2^{*}) \leq |z_1||z_2|
+            \label{eq:leq}
+        \end{equation}
+
+        Ahora si de Eq.\ref*{eq:sumz} se despeja el valor de $Re(z_1z_2^{*})$ y se remplaza en Eq.\ref*{eq:leq},
+
+        \begin{gather*}
+            |z_1 + z_2|^2 - |z_1|^2 - |z_2|^2  \leq 2 |z_1||z_2|\\
+            |z_1 + z_2|^2   \leq  |z_1|^2 + |z_2|^2 + 2|z_1||z_2|\\
+            |z_1 + z_2|^2   \leq  (|z_1| + |z_2|)^2\\
+        \end{gather*}
+
+        y finalmente se demuestran los dos últimos términos del problema
+
+        \begin{equation}
+            |z_1 + z_2|   \leq  |z_1| + |z_2|\\
+            \label{eq:ineq1}
+        \end{equation}
+
+        Ahora, para terminar la demostración se escribe $|z_1|$ como $|(z_1 + z_2) - z_2|$ y aplicando la Eq.\ref*{eq:ineq1} se obtiene,
+
+        \begin{gather*}
+            |(z_1 + z_2) + (-z_2)| \leq |(z_1 + z_2)| + |(-z_2)|\\
+            |(z_1 + z_2) + (-z_2)| \leq |(z_1 + z_2)| + |-1||z_2|\\
+            |(z_1 + z_2) + (-z_2)| \leq |(z_1 + z_2)| + |z_2|\\
+            |z_1| \leq |z_1 + z_2| + |z_2|\\
+        \end{gather*}
+        Por tanto, 
+
+        \begin{equation}
+            |z_1| - |z_2| \leq |z_1 + z_2| \\
+            \label{eq:ineq2}
+        \end{equation}
+
+        Por último usando Eq.\ref*{eq:ineq1} y Eq.\ref*{eq:ineq2} se demuestra finalmente
+
+        \begin{empheq}[box=\widefbox]{gather*}
+            |z_1| - |z_2| \leq |z_1 + z_2|   \leq  |z_1| + |z_2|
+        \end{empheq}
+    
+    \item Partiendo de la Ecuación de De Moivre 
+    
+        \begin{equation*}
+            e^{in\theta} = (\cos\theta + i\sin\theta)^n
+        \end{equation*}
+    
+        Realizando la expansión del exponente en términos del seno y coseno
+
+        \begin{equation}
+            \cos{n\theta} + i\sin{n\theta} = (\cos\theta + i\sin\theta)^n\\
+            \label{eq:dem}
+        \end{equation}
+
+        La expansión binomial esta dada por:
+
+        \begin{equation}
+            (x + y)^{n} = \sum_{k = 0}^{n} \binom{n}{k}x^{n-k}y^{k}
+            \label{eq:anw}
+        \end{equation}
+    
+        Ahora, si realizamos la expansión del binomial (Eq.\ref*{eq:anw}) en la parte derecha de la ecuación.
+
+
+        \begin{gather*}
+            (\cos\theta + i\sin\theta)^n = \sum_{k = 0}^{n} \binom{n}{k}(\cos\theta)^{n-k} (i\sin\theta)^{k}\\
+            (\cos\theta + i\sin\theta)^n = \sum_{k = 0}^{n} \binom{n}{k}(\cos\theta)^{n-k} i^{k}\sin\theta^{k}\\
+        \end{gather*}
+
+        Teniendo en cuenta que $i^2 = -1$ entonces podemos realizar la expansión de la sumatoria y separar la parte real e imaginaria 
+
+        \begin{gather*}
+            (\cos\theta + i\sin\theta)^n =  (\cos\theta)^{n} + \binom{n}{1}(\cos\theta)^{n-1} i\sin\theta^{1} + \binom{n}{2}(\cos\theta)^{n-2} i^{2}\sin\theta^{2} + \dots \\
+            (\cos\theta + i\sin\theta)^n =  (\cos\theta)^{n} + \binom{n}{1}(\cos\theta)^{n-1} i\sin\theta^{1} - \binom{n}{2}(\cos\theta)^{n-2}\sin\theta^{2} + \dots \\
+        \end{gather*}
+
+        Si se remplaza esto en Eq.\ref*{eq:dem}, se obtiene 
+
+        \begin{equation*}
+            \cos{n\theta} + i\sin{n\theta} =  (\cos\theta)^{n} + \binom{n}{1}(\cos\theta)^{n-1} i\sin\theta - \binom{n}{2}(\cos\theta)^{n-2}\sin\theta^{2} + \dots \\
+        \end{equation*}
+
+        Ahora como la parte real ($Re(z)$) y  la parte imaginaria ($Im(z)$) son linealmente independientes, entonces se puede expresar la anterior ecuación como:   
+
+        \begin{empheq}[box=\widefbox]{gather*}
+            \cos{n\theta} = \cos^{n}\theta - \binom{n}{2}\cos^{n-2}\theta\sin^2\theta + \binom{n}{4}\cos^{n-4}\sin^{4}\theta - \dots\\
+            \sin{n\theta} = \binom{n}{1}\cos^{n-1}\theta\sin\theta - \binom{n}{3}\cos^{n-3}\theta\sin^3\theta + \binom{n}{5}\cos^{n-5}\sin^{5}\theta - \dots\\
+        \end{empheq}
+
+    \item Partiendo del desarrollo de una serie geométrica 
+    
+        \begin{equation*}
+            \sum_{k = 0}^{n} r^{k} = \frac{1 - r^{n+1}}{1 - r}
+        \end{equation*}
+
+
+        Ahora, si se aplica este desarrollo para $r = e^{ix}$ se obtiene,
+
+        \begin{gather*}
+            \sum_{n = 0}^{N-1} (e^{ix})^{n} = \frac{1 - (e^{ix})^{N}}{1 - (e^{ix})}\\
+            \sum_{n = 0}^{N-1} (e^{ix})^{n} = \frac{1 - e^{iNx}}{1 - e^{ix}}\\
+            \sum_{n = 0}^{N-1} (e^{ix})^{n} = \frac{e^{iNx} - 1}{e^{ix} - 1} = \frac{e^{iNx/2}}{e^{ix/2}} \frac{e^{iNx/2} - e^{-iNx/2}}{e^{ix/2} - e^{-ix/2}}\\
+            \sum_{n = 0}^{N-1} (e^{ix})^{n} = \frac{e^{iNx/2}}{e^{ix/2}} \frac{e^{iNx/2} - e^{-iNx/2}}{e^{ix/2} - e^{-ix/2}}\\
+        \end{gather*}
+
+        Ahora recordando que $\sin{x} = \frac{e^{ix} - e^{-ix}}{2i}$, remplazando se obtiene,
+
+        \begin{gather*}
+            \sum_{n = 0}^{N-1} (e^{ix})^{n} = \frac{e^{iNx/2}}{e^{ix/2}} \frac{\frac{\sin(Nx/2)}{2i}}{\frac{\sin(x/2)}{2i}}\\
+            \sum_{n = 0}^{N-1} (e^{ix})^{n} = e^{i(N-1)x/2} \frac{\sin(Nx/2)}{\sin(x/2)}\\
+        \end{gather*}
+
+        Aplicamos la ecuación de De Moivre
+
+        \begin{gather*}
+            \sum_{n = 0}^{N-1} \left(\cos{x} - i\sin{x}\right)^{n} = \left(\cos(N-1)\frac{x}{2} - i\sin(N-1)\frac{x}{2}\right)  \frac{\sin(Nx/2)}{\sin(x/2)}\\
+            \sum_{n = 0}^{N-1} \left(\cos{nx} - i\sin{nx}\right) = \left(\cos(N-1)\frac{x}{2} - i\sin(N-1)\frac{x}{2}\right) \frac{\sin(Nx/2)}{\sin(x/2)}\\
+        \end{gather*}
+
+        Ahora como las bases del espacio complejo son linealmente independientes entonces se puede escribir en termi3nos de las siguientes ecuaciones,
+
+        \begin{empheq}[box=\widefbox]{gather*}
+            \sum_{n = 0}^{N-1} \cos{nx} = \frac{\sin(Nx/2)}{\sin(x/2)}\cos(N-1)\frac{x}{2}\\
+            \sum_{n = 0}^{N-1} \sin{nx} = \frac{\sin(Nx/2)}{\sin(x/2)}\sin(N-1)\frac{x}{2}\\
+        \end{empheq}
+
+    \item Recordando las definiciones trigonométricas en términos de series 
+    
+        \begin{gather*}
+            \sin{z} = \sum_{n = 1, odd}^{\infty} (-1)^{(n-1)/2}\frac{z^n}{n!} = \sum_{s = 0}^{\infty} (-1)^{s}\frac{z^{2s + 1}}{(2s + 1)!}\\
+            \cos{z} = \sum_{n = 0, even}^{\infty} (-1)^{n/2}\frac{z^n}{n!} = \sum_{s = 0}^{\infty} (-1)^{s}\frac{z^{2s}}{(2s)!}\\
+            \sinh{z} = \sum_{n = 1, odd}^{\infty} \frac{z^{n}}{n!} = \sum_{s = 0}^{\infty} \frac{z^{2s+1}}{(2s+1)!}\\
+            \cosh{z} = \sum_{n = 0, even}^{\infty} \frac{z^{n}}{n!} = \sum_{s = 0}^{\infty} \frac{z^{2s}}{(2s)!}\\
+        \end{gather*}
+        
+        \begin{enumerate}
+            \item $i\sin{z} = \sinh{iz}$
+            
+                \begin{gather*}
+                    \sinh{iz} = \sum_{s = 0}^{\infty} \frac{(iz)^{2s+1}}{(2s+1)!}\\
+                    \sinh{iz} = \sum_{s = 0}^{\infty} \frac{i^{2s+1}z^{2s+1}}{(2s+1)!}\\
+                \end{gather*}
+
+                Como $2s+1$ son siempre números impares entonces cada termino de la serie tendrá $i$, además los términos se encontrarán intercalados entre positivos y negativos,
+                
+                \begin{empheq}[box=\widefbox]{gather*}
+                    \sinh{iz} = i\sum_{s = 0}^{\infty} (-1)^s\frac{z^{2s+1}}{(2s+1)!}\\
+                    \sinh{iz} = i\sin{z}
+                \end{empheq}
+
+            \item $\sin{iz} = i\sinh{z}$
+
+                \begin{gather*}
+                    \sin{iz} = \sum_{s = 0}^{\infty} (-1)^{s}\frac{(iz)^{2s + 1}}{(2s + 1)!}\\
+                    \sin{iz} = \sum_{s = 0}^{\infty} (-1)^{s}i^{2s + 1}\frac{z^{2s + 1}}{(2s + 1)!}\\
+                \end{gather*}
+
+                Para este caso se sigue cumpliendo que cada termino de la serie contendrá $i$ y los valores estarán intercalados entre positivos y negativos.
+
+                \begin{empheq}[box=\widefbox]{gather*}
+                    \sin{iz} = i\sum_{s = 0}^{\infty} (-1)^{s}(-1)^s\frac{z^{2s + 1}}{(2s + 1)!}\\
+                    \sin{iz} = i\sum_{s = 0}^{\infty} (1)^{s}\frac{z^{2s + 1}}{(2s + 1)!}\\
+                    \sin{iz} = i\sinh{z}
+                \end{empheq}
+
+            \item $\cos{z} = \cosh{iz}$
+            
+                \begin{gather*}
+                    \cosh{iz} = \sum_{s = 0}^{\infty} \frac{(zi)^{2s}}{(2s)!}\\
+                    \cosh{iz} = \sum_{s = 0}^{\infty} i^{2s}\frac{z^{2s}}{(2s)!}\\
+                \end{gather*}
+
+                Parar este caso $2s$ siempre es par, por lo que $i^{2s}$ siempre tendrá valor real, pero los términos de la serie serán intercalados entre valores positivos y negativos,
+
+                \begin{empheq}[box=\widefbox]{gather*}
+                    \cosh{iz} = \sum_{s = 0}^{\infty} (-1)^s\frac{z^{2s}}{(2s)!}\\
+                    \cosh{iz} = \cos{z}\\
+                \end{empheq}
+
+            \item $\cos{iz} = \cosh{z}$
+            
+                \begin{gather*}
+                    \cos{iz} = \sum_{s = 0}^{\infty} (-1)^{s}\frac{(iz)^{2s}}{(2s)!}\\
+                    \cos{iz} = \sum_{s = 0}^{\infty} (-1)^{s}i^{2s}\frac{z^{2s}}{(2s)!}\\
+                \end{gather*}   
+                
+                Al igual, que en el caso anterior $i^{2s}$ siempre será real pero sus valores serán intercalados,
+
+                \begin{empheq}[box=\widefbox]{gather*}
+                    \cos{iz} = \sum_{s = 0}^{\infty} (-1)^s(-1)^s\frac{z^{2s}}{(2s)!}\\
+                    \cos{iz} = \sum_{s = 0}^{\infty} (1)^s\frac{z^{2s}}{(2s)!}\\
+                    \cos{iz} = \cosh{z}\\
+                \end{empheq}
+
+
+        \end{enumerate}
+
+
+\end{enumerate}
+\end{document}

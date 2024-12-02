@@ -1,0 +1,55 @@
+\begin{problem}{2}
+    Let $C_0$ denote the circle centered at $z_0$ with radius $R$, and use the parametrization
+    \begin{gather*}
+        z = z_0 + Re^{i\theta}
+    \end{gather*}
+    to show that 
+
+    \begin{gather*}
+        \int_{C_0} (z - z_0)^{n-1} = 
+        \left\{\begin{matrix}
+            0 & \text{ when} \;\; n = \pm 1,\pm 2, \dots \\
+            2\pi i & \text{when} \;\; n = 0          
+        \end{matrix}\right.
+    \end{gather*}
+\end{problem}
+
+\section*{Solución}
+
+La integral sobre una función compleja esta definida como 
+
+\begin{gather*}
+    \int_C f(z)dz = \int_C f[z(\theta)]z'(\theta)d\theta
+\end{gather*}
+
+Para este caso la parametrización es $z(\theta) = z_0 + Re^{i\theta}$ y su derivada $z'(\theta) = iRe^{i\theta}$, donde $\theta$ esta en el intervalo $-\pi \leq \theta \leq \pi$. Remplazando estos valores se obtiene 
+
+\begin{gather*}
+    \int_C (z - z_0)^{n-1} = \int_{-\pi}^{\pi} [z_0 + Re^{i\theta} - z_0]^{n-1} iRe^{i\theta}d\theta\\
+    \int_C (z - z_0)^{n-1} = iR^{n}\int_{-\pi}^{\pi} e^{ni\theta} d\theta
+\end{gather*}
+
+En el caso en que $n = 0$ 
+
+\begin{mdframed}
+    \vspace{-0.25cm}
+    \begin{gather}
+        \int_C (z - z_0)^{n-1} = i\int_{-\pi}^{\pi} d\theta = 2i\pi
+    \end{gather}
+    \vspace{-0.3cm}
+\end{mdframed}
+
+Ahora para el caso en que $n \neq 0$ 
+
+\begin{gather*}
+    \int_C (z - z_0)^{n-1} = iR^{n}\int_{-\pi}^{\pi} e^{ni\theta} d\theta\\
+    \int_C (z - z_0)^{n-1} = iR^{n}\frac{1}{in}[e^{ni\pi}- e^{-ni\pi}]
+\end{gather*}
+
+\begin{mdframed}
+    \vspace{-0.25cm}
+    \begin{gather}
+    \int_C (z - z_0)^{n-1} = \frac{2i R^{n}\sin(n\pi)}{n} = 0
+\end{gather}
+    \vspace{-0.3cm}
+\end{mdframed}

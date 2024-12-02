@@ -1,0 +1,65 @@
+\begin{problem}{2}
+    In each case, write the function $f(z)$ in the form $f(z) = u(x, y)+iv(x, y)$:
+    \begin{enumerate}
+        \item $f(z) = z^3 + z + 1$
+        \item $f(z) = \frac{z^{*}}{z}$
+    \end{enumerate}
+\end{problem}
+
+\subsection*{Solución}
+
+\begin{enumerate}
+    \item $f(z) = z^3 + z + 1$
+    
+    Teniendo en cuenta que $z = x + iy$ entonces 
+
+    \begin{gather*}
+        f(z) = (x + iy)^3 + (x + iy) + 1\\
+        f(z) = (x + iy)(x^2 + 2ixy + i^2y^2) + (x + iy) + 1\\
+        f(z) = (x^3 + 2ix^2y + i^2y^2x) + (iyx^2 + 2i^2xy^2 + y^3i^3) + (x + iy) + 1\\
+        f(z) = x^3 + 2ix^2y - y^2x + iyx^2 - 2xy^2 - y^3i + x + iy + 1\\
+    \end{gather*}
+
+    Finalmente agrupando los valores reales e imaginarios 
+
+    \begin{gather*}
+        f(z) = (x^3 - y^2x - 2xy^2 + x +1) + (2x^2y + yx^2 - y^3  + y)i\\
+        f(z) = (x^3 - 3xy^2 + x +1) + (y + 3x^2y - y^3)i
+    \end{gather*}
+
+    Entonces se tiene que 
+
+    \begin{mdframed}
+        \vspace{-0.25cm}
+        \begin{gather}
+            u(x,y) = (x^3 - 3xy^2 + x +1)\\
+            v(x,y) = (y + 3x^2y - y^3)
+        \end{gather}
+        \vspace{-0.3cm}
+    \end{mdframed}
+    \newpage
+    \item $f(z) = \frac{z^{*}}{z}$
+    
+    Expresando en términos de $x,y$ entonces 
+
+    \begin{gather*}
+        f(z) = \frac{(x-iy)}{(x+iy)}\\
+        f(z) = \frac{x}{(x+iy)} - \frac{iy}{(x+iy)} \\
+        f(z) = \frac{x}{(x+iy)}\frac{(x-iy)}{(x-iy)} - \frac{iy}{(x+iy)}\frac{(x-iy)}{(x-iy)} \\
+        f(z) = \frac{x(x-iy)}{(x^2 + y^2)} - \frac{iy(x-iy)}{(x^2+y^2)} \\
+        f(z) = \frac{x^2-iyx}{(x^2 + y^2)} - \frac{iyx + y^2}{(x^2+y^2)} \\
+        f(z) = \frac{x^2-y^2}{(x^2 + y^2)} - i\frac{2xy}{(x^2+y^2)} \\
+    \end{gather*}
+
+    Entonces
+
+    \begin{mdframed}
+        \vspace{-0.25cm}
+        \begin{gather}
+            u(x,y) = \frac{x^2-y^2}{(x^2 + y^2)}\\
+            v(x,y) = - \frac{2xy}{(x^2+y^2)}
+        \end{gather}
+        \vspace{-0.3cm}
+    \end{mdframed}
+    
+\end{enumerate}

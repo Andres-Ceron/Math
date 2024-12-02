@@ -1,0 +1,35 @@
+\begin{problem}{5}
+    Write the Maclaurin series for the function:
+    \begin{gather*}
+        f(z) = \sin(z^2)
+    \end{gather*}    
+\end{problem}
+
+Tomando la definición del seno en función de funciones exponenciales 
+
+\begin{gather*}
+    \sin(z) = \frac{e^{iz} - e^{-iz}}{2i}
+\end{gather*}
+Recordando la serie para la función exponencial 
+
+\begin{gather*}
+    e^{z} = \sumserie \frac{z^n}{n!}
+\end{gather*}
+Remplazando $z = iz$ y $z = -iz$ en la serie de Maclaurin para la función exponencial se obtiene
+
+\begin{gather*}
+    \sin(z) = \frac{1}{2i}\sumserie\left(\frac{(iz)^n}{n!} - \frac{(-iz)^n}{n!}\right) = \frac{1}{2i}\sumserie\left(1 - (-1)^n\right) \frac{(iz)^n}{n!}
+\end{gather*}
+Tomando los valores de $n$ para los cuales la serie es no nula, entonces se obtiene que $n = 2n+1$.
+
+\begin{gather*}
+    \sin(z) = \frac{1}{2i}\sumserie 2i^{2n}i\frac{z^{2n+1}}{(2n+1)!} = \sumserie (-1)^{n}\frac{z^{2n+1}}{(2n+1)!}
+\end{gather*}
+En esta expresión podemos sustituir $z = z^2$ y se obtiene que
+
+\begin{mdframed}
+    \vspace{-0.4 cm}
+    \begin{gather}
+        \sin(z^2) = \sumserie (-1)^{n}\frac{(z^2)^{2n+1}}{(2n+1)!} = \sumserie (-1)^{n}\frac{z^{4n+2}}{(2n+1)!} 
+    \end{gather}
+\end{mdframed}
