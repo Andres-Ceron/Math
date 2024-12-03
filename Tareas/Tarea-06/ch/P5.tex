@@ -1,0 +1,38 @@
+\begin{problem}{5}
+    Show that when $0 < |z - 1| < 2$,
+    \begin{gather}
+        \frac{z}{(z-1)(z-3)} = -3 \sum_{n = 0}^{\infty}\frac{(z-1)^n}{2^{n+2}} - \frac{1}{2(z-1)}
+    \end{gather}
+\end{problem}
+
+\subsection*{Solución}
+Descomponiendo $f(x)$ en fracciones parciales 
+
+\begin{gather*}
+    \frac{z}{(z-1)(z-3)} = \frac{A}{(z-1)} + \frac{B}{(z-3)}\\
+    z = A(z-3) + B(z-1) = Az - 3A + Bz - B
+\end{gather*}
+esto implica el siguiente sistema de ecuaciones
+
+\begin{gather*}
+    -3A - B = 0 \quad \rightarrow \quad B = -3A\\
+    A + B = 1   \quad \rightarrow \quad A = -1/2 \quad B = 3/2
+\end{gather*}
+entonces 
+
+\begin{gather}
+    \frac{z}{(z-1)(z-3)} = -\frac{1}{2(z-1)} + \frac{3}{2(z-3)}
+\end{gather}
+como estamos en el intervalo $0 < |z - 1| < 2$, la cota inferior indica que $ z > 1$, por lo tanto, la singularidad en $z=1$ no se puede aproximar en series de potencia. La cota superior indica que $|z-1|/2 < 1$.
+
+\begin{gather*}
+    f(z) = -\frac{1}{2(z-1)} - \frac{3}{2}\frac{1}{2 + (1-z)} = -\frac{1}{2(z-1)} - \frac{3}{4}\frac{1}{1 - (z-1)/2}
+\end{gather*}
+finalmente 
+
+\begin{result}
+    \begin{gather}
+        f(z) = -\frac{1}{2(z-1)} - \frac{3}{2^2}\sum_{n = 0}^{\infty}\left(\frac{z-1}{2}\right)^n\\
+        f(z) = -\frac{1}{2(z-1)} - 3\sum_{n = 0}^{\infty}\frac{(z-1)^n}{2^{n+2}}
+    \end{gather}
+\end{result}

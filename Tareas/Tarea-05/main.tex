@@ -23,19 +23,22 @@
 \usepackage{empheq}
 \usepackage{mdframed}
 \usepackage{xcolor}
+\usepackage{wrapfig}
+\usepackage{cancel}
 
 \input{utils.tex}
 
 \newenvironment{problem}[2][Problem]
-    { \begin{mdframed}[backgroundcolor=gray!20] \textbf{#1 #2}\vspace{0.5cm}\\ }
+    { \begin{mdframed} \textbf{#1 #2}\vspace{0.5cm}\\ }
     {  \end{mdframed}}
-
+\newenvironment{result}[1]{\begin{mdframed}\vspace{-0.5cm} #1 }{\end{mdframed}}
+%[backgroundcolor=gray!20]
 \newcommand*\widefbox[1]{\fbox{\hspace{2em}#1\hspace{2em}}}
 \renewcommand{\theenumi}{(\textit{\roman{enumi}})}
 \newcommand{\myname}{Andrés F. Cerón M.}
 \newcommand{\assignment}{Métodos Matemáticos}
 \newcommand{\duedate}{\today}
-\newcommand{\Titulo}{Tarea - 04: Series Complejas.}
+\newcommand{\Titulo}{Tarea - 05: Integral de Cauchy.}
 
 \pagestyle{fancy}
 \fancypagestyle{plain}
@@ -72,21 +75,10 @@
 \pagestyle{myheadings}
 \vspace{-2cm}
 
-
 \input{ch/P1.tex}
-\vspace{0.5cm}
 \input{ch/P2.tex}
-\vspace{0.5cm}
 \input{ch/P3.tex}
-\vspace{0.5cm}
 \input{ch/P4.tex}
-\vspace{0.5cm}
 \input{ch/P5.tex}
-\newpage
-\input{ch/P6.tex}
-\vspace{0.5cm}
-\input{ch/P7.tex}
-\vspace{0.5cm}
-\input{ch/P8.tex}
 
 \end{document}

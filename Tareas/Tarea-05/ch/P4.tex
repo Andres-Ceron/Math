@@ -1,27 +1,47 @@
 \begin{problem}{4}
-    Rederive the Maclaurin series for the function $f(z) = \cos z$ by using th definition:
+    Let C be the unit circle $z = e^{i\theta} \quad (-\pi \leq \theta \leq \pi)$. First show that for any real constant $a$,
     \begin{gather}
-        \cos z = \frac{e^{iz} + e^{-iz}}{2}
-    \end{gather}    
+        \label{eq:P4-1}\int_C \frac{e^{az}}{z}dz = 2\pi i
+    \end{gather}
+    Then write this integral in terms of $\theta$ to derive the integration formula:
+
+    \begin{gather}
+        \int_{0}^{\pi} e^{a\cos\theta}\cos(\sin(\theta))d\theta = \pi
+    \end{gather}
 \end{problem}
+\subsection*{Solución}
 
-Recordando la definición de la serie de Maclaurin para la función $f(z) = e^{z}$
-
-\begin{gather}
-    e^{z} = \sumserie \frac{z^n}{n!}
-\end{gather}
-Remplazando en la función $\cos(z)$
+La integral dada en la ecuación (\ref*{eq:P4-1}) se puede expresar como 
 
 \begin{gather*}
-    \cos z = \frac{e^{iz} + e^{-iz}}{2} = \frac{1}{2}\left(\sumserie \frac{(iz)^n}{n!} + \sumserie \frac{(-iz)^n}{n!}\right)\\
-    \cos z = \frac{1}{2}\sumserie\left( 1 + (-1)^n\right)\frac{(iz)^n}{n!}
+    \int_C \frac{e^{az}}{z+0}dz 
 \end{gather*}
-Entonces, para el termino entre paréntesis se obtienen dos valores; 0  cuando $n = 2n + 1$ y 2 cuando $n = 2n$. Tomando los valores no nulos de la serie se obtienen
+entonces dado un $z_0 = 0$ que esta contenido en el circulo unitario descrito por $C$, se cumplirá la integral de Cauchy.
 
-\begin{mdframed}
-    \vspace{-0.4 cm}
+\begin{gather*}
+    f(0) = \frac{1}{2\pi i}\int_{C} \frac{f(z)}{z+z_0}dz 
+\end{gather*}
+donde $f(z) = e^{az}$ y $z_0 = 0$, remplazando el valor de $f(z)$ y  evaluando en el punto $z_0$ se obtiene 
+
+\begin{result}
     \begin{gather}
-        \cos z = \frac{1}{2}\sumserie \frac{2(iz)^{2n}}{(2n)!} = \sumserie \frac{(-1)^n z^{2n}}{(2n)!}
+        \label{eq:P4-2}2\pi i = \int_{C} \frac{ae^{az}}{z+0}dz 
     \end{gather}
-\end{mdframed}
+\end{result}
+Parametrizando la función con $z =re^{i\theta} = r(\cos\theta - i\sin\theta), z^{\prime} = ire^{i\theta}d\theta $ donde $r = 1$ y $(-\pi \leq \theta \leq \pi)$
 
+\begin{gather*}
+    \int_C \frac{e^{az}}{z}dz = \int_{-\pi}^{+\pi} \frac{e^{a(\cos\theta - i\sin\theta)}}{e^{i\theta}}ie^{i\theta}d\theta = i\int_{-\pi}^{+\pi} e^{a\cos\theta}e^{-i\sin\theta}d\theta
+\end{gather*}
+expresando el exponencial con potencia imaginaria en términos de funciones trigonométricas, e igualando con (\ref*{eq:P4-2})
+
+\begin{gather*}
+    \int_C \frac{e^{az}}{z}dz = i\int_{-\pi}^{+\pi} e^{a\cos\theta}(\cos(\sin\theta) - i\sin(\sin\theta)) d\theta = 2\pi i
+\end{gather*}
+igualando la parte real e imaginaria se obtiene 
+
+\begin{result}
+    \begin{align}
+        \int_{0}^{\pi} e^{a\cos\theta}\cos(\sin\theta)d\theta = \pi  &&  \int_{0}^{\pi} e^{a\cos\theta}\sin(\sin\theta)d\theta  = 0
+    \end{align}
+\end{result}

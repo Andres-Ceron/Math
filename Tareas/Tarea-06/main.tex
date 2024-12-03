@@ -22,13 +22,23 @@
 \usepackage{wrapfig}
 \usepackage{empheq}
 \usepackage{mdframed}
+\usepackage{xcolor}
+\usepackage{wrapfig}
+\usepackage{cancel}
 
+\input{utils.tex}
+
+\newenvironment{problem}[2][Problem]
+    { \begin{mdframed} \textbf{#1 #2}\vspace{0.5cm}\\ }
+    {  \end{mdframed}}
+\newenvironment{result}[1]{\begin{mdframed}\vspace{-0.5cm} #1 }{\end{mdframed}}
+%[backgroundcolor=gray!20]
 \newcommand*\widefbox[1]{\fbox{\hspace{2em}#1\hspace{2em}}}
 \renewcommand{\theenumi}{(\textit{\roman{enumi}})}
-\newcommand{\myname}{Andrés F. Cerón}
-\newcommand{\assignment}{Métodos Matemáticos I}
+\newcommand{\myname}{Andrés F. Cerón M.}
+\newcommand{\assignment}{Métodos Matemáticos}
 \newcommand{\duedate}{\today}
-\newcommand{\Titulo}{Notas de Clase.}
+\newcommand{\Titulo}{Tarea - 06: Series de Laurent.}
 
 \pagestyle{fancy}
 \fancypagestyle{plain}
@@ -40,17 +50,16 @@
   \setlength{\footskip}{2.0in}
   \fancyhead[l]{
     {\bf \assignment \hfill \myname} \\
-    Departamento de Física Aplicada - Verano 2024 \hfill \today
+    Departamento de Física Aplicada \hfill \today
   }
 }
 
 \pagestyle{myheadings}
-\markright{\bf{Funciones analíticas.}}
-
-
+\markright{\bf{\assignment}}
 \title{\Large \bf \Titulo}
 \author{}
 \date{}
+
 
 
 \begin{document}
@@ -64,14 +73,12 @@
 \setlength{\headheight}{0.65in}
 \setlength{\textheight}{8.60in}
 \pagestyle{myheadings}
-
 \vspace{-2cm}
 
-\input{ch/complex.tex}
-\input{ch/funciones.tex}
-\input{ch/Integral.tex}
-\input{ch/Series.tex}
-
-
+\input{ch/P1.tex}
+\input{ch/P2.tex}
+\input{ch/P3.tex}
+\input{ch/P4.tex}
+\input{ch/P5.tex}
 
 \end{document}

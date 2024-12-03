@@ -1,0 +1,33 @@
+\section{Series}
+
+\subsection{Serie de Taylor}
+\begin{mdframed}
+    \textbf{Teorema:}\\
+    Suponga que una función $f$ es analítica en un disco $|z - z_0| < R_0$, entrada en $z_0$ y con radio $R_0$. Entonces $f(z)$ tendrá la siguiente representación en series de potencia
+    \begin{gather}
+        \label{eq:S-1}f(z) = \sum_{n = 0}^{\infty} a_n(z - z_0) \quad (|z - z_0| < R_0)
+    \end{gather}
+    donde 
+    \begin{gather}
+        a_n = \frac{f^{(n)}(z_0)}{n!}
+    \end{gather}
+    Es decir, la serie (\ref*{eq:S-1}) converge a $f(z)$ cuando $z$ se encuentra en el disco abierto indicado
+\end{mdframed}
+Es la expansión de $f(z)$ en una serie de Taylor alrededor del punto $z_0$. Es la conocida serie de Taylor del cálculo, adaptada a funciones de variable compleja.
+
+\subsection{Series de Laurent}
+
+Si una función $f$ no es analítica en $z_0$, entonces no es posible aplicar el Teorema de Taylor en ese punto.  Sin embargo, a menudo es posible encontrar una representación en serie para $f(z)$ que incluya potencias tanto positivas como negativas de $z - z_0$.
+
+\begin{mdframed}
+    \textbf{Teorema:}\\
+    Suponga que una función $f$ es analítica en un dominio anular (domino contenido entre dos circunferencias) $R_1 < |z - z_0| < R_2$, centrado en $z_0$, y suponga un contorno cerrado simple $C$, orientado positivamente alrededor de $z_0$ y contenido en este dominio. Entonces, para cada punto en este dominio, $f(z)$ tendrá la siguiente representación en series 
+    \begin{gather}
+        f(z) = \sum_{n = 0}^{\infty}a_n(z-z_0)^{n} + \sum_{n = 1}^{\infty} \frac{b_n}{(z-z_0)^{n}} \quad (R_1 < |z - z_0| < R_2)
+    \end{gather}
+    donde 
+    \begin{gather}
+        a_n = \frac{1}{2\pi i}\int_C \frac{f(z)dz}{(z-z_0)^{n+1}}\\
+        b_n = \frac{1}{2\pi i}\int_C \frac{f(z)dz}{(z-z_0)^{-n+1}}
+    \end{gather}
+\end{mdframed}

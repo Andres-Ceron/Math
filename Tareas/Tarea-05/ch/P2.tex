@@ -1,30 +1,32 @@
 \begin{problem}{2}
-    Find the Maclaurin series expansion of the function:
-    \begin{gather}
-        \label{eq:p2}f(z) = \frac{z}{z^{4} + 4 } = \frac{z}{4}\cdot\frac{1}{1+ (z^4/4)}
-    \end{gather}    
+    Let $C$ be the circle $|z| = 3$, described in the positive sense. Show that if:
+    \begin{equation}
+        g(z) = \int_C \frac{2s^2 - s - 2}{s-z}ds
+    \end{equation} 
+    then $g(2) = 8\pi i$. What is the value of $g(z)$ when $|z| > 3$?   
 \end{problem}
-Primero es necesario establecer los valores de $z$ para los cuales esta función es analítica. La función deja de ser cuando el denominador se hace cero. 
-
-\begin{gather*}
-    z^4 = 4 \rightarrow |z| < \sqrt{2}
-\end{gather*}
-Entonces la expansion en series de Maclaurin solo se cumplirá en este intervalo. Recordando la siguiente expresión 
+\subsection*{Solución}
+La Integral de Cauchy nos dice que para una función $f$ analítica en y sobre todo contorno cerrado simple $C$ se cumple 
 
 \begin{gather}
-    \label{eq:s-geo}\frac{1}{1 - z} = \sumserie z^n
+    f(z) = \frac{1}{2\pi i}\int_C \frac{f(s)}{s - z}ds
 \end{gather}
-Remplazando $z = - z^4/4$ en (\ref*{eq:s-geo})
+siempre que $z$ sea un punto contenido en $C$. Para este caso entonces $f(s) = 2s^2 - s -2$, y cuando la función $g$ es evaluada en $2$, entonces el punto $z$ está contenido dentro del circulo de $C$. 
 
-\begin{gather*}
-    \frac{1}{1 + (z^4/4)} = \sumserie \left(-\frac{z^4}{4}\right)^n = \sumserie (-1)^n\left(\frac{z^4}{4}\right)^n
-\end{gather*}
-Finalmente remplazamos en (\ref*{eq:p2})
-
-\begin{mdframed}
-    \vspace{-0.4cm}
+\begin{result}
     \begin{gather}
-        f(z) = \frac{z}{4} \sumserie (-1)^n\left(\frac{z^4}{4}\right)^n \;\;\;\; |z| < \sqrt{2}\\
-        f(z) = \sumserie(-1)^n \frac{z^{4n+1}}{2^{2n+2}} \;\;\;\; |z| < \sqrt{2}
+        g(2) = \int_C \frac{2s^2 - s - 2}{s-2}ds = 2\pi i f(2)\\
+        g(2) = 2\pi (2(2)^2 - 2 - 2) = 8\pi i
     \end{gather}
-\end{mdframed}
+\end{result}
+Cuando $z > 3$ la singularidad se encuentra fuera de $C$, esto implica que la función
+\begin{gather*}
+    h(z) = \frac{2s^2 - s - 2}{s-z}
+\end{gather*}
+será analítica para todos los puntos dentro de $C$, entonce, según el teorema de Cauchy - Goursat
+
+\begin{result}
+    \begin{gather}
+        \int_C h(z)dz = \int_C \frac{2s^2 - s - 2}{s-z} = 0 \quad (z > 3)
+    \end{gather}
+\end{result}

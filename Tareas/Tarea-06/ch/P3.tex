@@ -1,0 +1,29 @@
+\begin{problem}{3}
+    Find a representation for the function:
+    \begin{gather}
+        f(z) = \frac{1}{1+z} = \frac{1}{z}\;\frac{1}{1+(1/z)}
+    \end{gather}
+    in negative powers of $z$ that is valid when $1 < |z| < \infty$.
+\end{problem}
+\subsection*{Solución}
+
+En el intervalo donde la serie es valida implica que $1/|z| < 1$, entonces, expresando esta función en la forma de potencias negativas y recordando 
+
+\begin{gather*}
+    f(z) = \frac{1}{z} \frac{1}{1 - (-1/z)}
+\end{gather*}
+recordando la expresión para series negativas
+
+\begin{gather*}
+    \frac{1}{1-z} = \sum_{n = 0}^{\infty}z^n
+\end{gather*}
+remplazando se obtiene 
+
+\begin{gather*}
+    f(z) = \frac{1}{z}\sum_{n = 0}^{\infty} \left(-\frac{1}{z}\right)^n = \sum_{n = 0}^{\infty}\frac{(-1)^{n}(-1)^2}{z^{n+1}}
+\end{gather*}
+remplazando $n \rightarrow n-1$
+
+\begin{gather*}
+    f(z) = \sum^{\infty}_{n=1}\frac{(-1)^{n+1}}{z^n}
+\end{gather*}

@@ -1,39 +1,38 @@
 \begin{problem}{3}
-    Use the identity $\sinh(z + \pi i) = - sinh z$, and the fact that $\sinh z$ is periodic with period $2\pi i$ to find the Taylor series for sinh $z$ about the point $z_0 = \pi i$.
+    Show that if $f$ is analytic within and on a simple closed contour $C$ and $z_0$ is not on $C$, then: 
+    \begin{gather}
+        \int_C \frac{f^{\prime}(z)}{z - z_0}dz = \int_C \frac{f(z)}{(z - z_0)^2}dz 
+    \end{gather}   
 \end{problem}
 
-Previamente se demostró la serie de Maclaurin para $\sin(z)$ y esta dada por.
+\subsection*{Solución}
+
+El teorema de Cauchy-Goursat indica que si una función $f$ es analítica en todos los puntos contenidos en un contorno cerrado simple $C$, entonces la integral de $f$ sobre el contorno $C$ será cero. Sea $g(z)$ la función dada por
+
 
 \begin{gather*}
-    \sin(z) = \sumserie \frac{(-1)^n z^{2n+1}}{(2n+1)!}
+    g(z) = \frac{f(z)}{(z - z_0)^2}
 \end{gather*}
-Aprovechando la relación con la función hiperbólica, $\sinh(z) = -\sin(iz)$ se obtiene
-
-\begin{gather*}
-    \sinh(z)= -i\sin(iz) = -i\sumserie \frac{(-1)^n (iz)^{2n+1}}{(2n+1)!} =  -i\sumserie \frac{iz^{2n+1}}{(2n+1)!}\\
-    \sinh(z)=  \sumserie \frac{z^{2n+1}}{(2n+1)!}
-\end{gather*}
-Ahora, usando la identidad $\sinh(z + \pi i) = -\sinh z$
-
-\begin{gather*}
-    \sinh(z + \pi i) = -  \sumserie \frac{z^{2n+1}}{(2n+1)!}
-\end{gather*}
-Debido a que esta función es periódica cada $2\pi i$ entonces 
+donde $f$ es una función analítica para cualquier valor dentro y en $C$, debido a que $z_0$ no está contenida en $C$, entonces $g(z)$ también será analítica dentro de $C$. Usando el teorema de Cauchy-Goursat
 
 \begin{gather}
-    \sinh(z + \pi i - 2\pi i) = \sinh(z - \pi i) = -\sinh(z)
+    \int_C g(z) = \int_C \frac{f(z)}{(z - z_0)^2} = 0
 \end{gather}
-Realizando la sustitución $u = z- \pi i$ entonces 
+debido a que $f(z)$ es analítica para cualquier punto en y sobre $C$, entonces su derivada también será analítica. Extendiendo este argumento a la función $h(z)$ 
 
 \begin{gather*}
-    \sinh(z) = -\sinh(z - \pi i)\\
-    \sinh(u-\pi i) = - \sinh(u)\\
+    h(z) = \frac{f^{\prime}(z)}{z - z_0}
 \end{gather*}
-Realizando la expansión en series para $\sinh u$ y posteriormente remplazando $z$ se obtiene.
+debido a que $z_0$ no está en $C$ entonces $h(z)$ será analítica para todo $C$, por tanto, su integral sobre el contorno $C$ también será cero
 
-\begin{mdframed}
-    \vspace{-0.4cm}
+\begin{gather}
+    \int_C h(z) = \int_C \frac{f^{\prime}(z)}{z - z_0} = 0
+\end{gather}
+debido que $g(z)$ y $h(z)$ son analíticas para cualquier valor dentro de $C$ entonces se demuestra
+
+\begin{result}
     \begin{gather}
-        \sin(z) = - \sumserie \frac{(z- \pi i)^{2n+1}}{(2n+1)!} 
+    \int_C \frac{f(z)}{(z - z_0)^2}  = \int_C \frac{f^{\prime}(z)}{z - z_0} = 0  
     \end{gather}
-\end{mdframed}
+\end{result}
+

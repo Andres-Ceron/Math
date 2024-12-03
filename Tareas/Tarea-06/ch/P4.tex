@@ -1,0 +1,39 @@
+\begin{problem}{4}
+    Give two Laurent series expansions in powers of z for the function
+    \begin{gather}
+        f(z) = \frac{1}{z^2(1-z)}
+    \end{gather}
+    and specify the regions in which those expansions are valid.
+\end{problem}
+\subsection*{Solución}
+Para esta función existen dos singularidades, en $z = 0$ y en $z = 1$. Esto genera dos regiones donde esta función es analítica
+\begin{gather*}
+    0 < |z| < 1 \quad \text{y} \quad 1 < |z|  < \infty
+\end{gather*}
+en la primera región $(0 < |z|)$
+
+\begin{gather*}
+    f(z) = \frac{1}{z^2} \frac{1}{1-z} = \frac{1}{z^2} \sum_{n=0}^{\infty}z^{n} = \sum_{n = 0}^{\infty} z^{n-2}
+\end{gather*}
+remplazando $n \rightarrow n+2$
+
+\begin{mdframed}
+    \vspace{-0.5cm}
+    \begin{gather}
+        f(z) = \sum_{n = -2}^{\infty} z^{n} = \frac{1}{z^2} + \frac{1}{z} + \sum_{n = 0}^{\infty} z^{n} \qquad (0 < |z| < 1)
+    \end{gather}
+\end{mdframed}
+en la segunda región se $(1/|z| < 1)$
+
+\begin{gather*}
+    f(z) = \frac{1}{z^3}\frac{1}{1/z - 1} = -\frac{1}{z^3}\frac{1}{1-1/z} = -\frac{1}{z^3}\sum_{n=0}^{\infty}\left(\frac{1}{z}\right)^{n}
+\end{gather*}
+remplazando $n \rightarrow n - 3$
+
+\begin{mdframed}
+    \vspace{-0.5cm}
+    \begin{gather}
+        f(z) = - \sum_{n = 3}^{\infty}\frac{1}{z^{n}}  \qquad (1< |z| < \infty)
+    \end{gather}
+\end{mdframed}
+\newpage
